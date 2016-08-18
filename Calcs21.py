@@ -146,7 +146,7 @@ class Calcs:
             #plot(x, A)
             D.append(d)
         if len(l) == 0:
-            print 'cannot fit'
+            print('cannot fit')
         else:
             d = D[l.index(min(l))]
         
@@ -191,7 +191,7 @@ class Calcs:
         A = C.matrix(x)
         for i in range (0, len(x)):
             sum += sqrt((y[i]-A[i])**2)/len(x)
-        #print sum
+        #print(sum)
         return sum
 
     def func2(self, d):

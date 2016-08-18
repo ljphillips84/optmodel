@@ -1,5 +1,6 @@
 from pylab import *
-import tkFileDialog
+from tkinter import filedialog
+from tkinter import *
 import nelmin
 from Calcs21 import *
 from Model import *
@@ -58,7 +59,7 @@ class Plot:
     def openfile(self, widget):
         self.n = 1
         self.ax.clear()
-        self.filename = tkFileDialog.askopenfilename()
+        self.filename = filedialog.askopenfilename()
         filename = self.filename
         self.data = loadtxt(filename)
         self.datax = loadtxt(filename, unpack = True, usecols=[0])
@@ -145,7 +146,7 @@ class Plot:
         N = self.L.eton(e)
         output = (x, real(N), -imag(N))
         filename = '{0}/nk2/{1}.txt'.format(os.path.dirname(os.path.realpath(__file__)), self.m)
-        print filename
+        print(filename)
         savetxt(filename, transpose([output]))
 
     def save(self, widget):
@@ -207,7 +208,7 @@ class Plot:
                     self.d = D[m] - ((D[m-1]-D[m]))/2
                     if j == i+1:
                         self.d = D[m]
-                    print m, D[m], D[m-1]-D[m], self.d
+                    print(m, D[m], D[m-1]-D[m], self.d)
                     
             if ((i/l)+1)%2 == 0:
                 if i > l**2-l:
@@ -225,7 +226,7 @@ class Plot:
                     m += 1
                     self.m = m
                     self.d = D[m] - ((D[m-1]-D[m]))/2
-                    print m, D[m], D[m-1]-D[m], self.d
+                    print(m, D[m], D[m-1]-D[m], self.d)
         B = D[1:len(D)]          
         output = (X, Y, B, W, E)
         savetxt('output', transpose([output]))
@@ -242,7 +243,7 @@ class Plot:
             D.append(self.d)
             Q.append(i)
             W.append(self.p)
-        #print D
+        print(D)
         output = (Q, D, W)
         savetxt('manual', transpose([output]))
         

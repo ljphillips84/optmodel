@@ -383,16 +383,16 @@ def test_fun_3(z):
 #--------------------------------------------------------------------
 
 if __name__ == '__main__':
-    print "Begin nelmin self-test..."
+    print("Begin nelmin self-test...")
 
-    print "---------------------------------------------------"
-    print "test 1: simple quadratic with zero at (1,1,...)"
+    print("---------------------------------------------------")
+    print("test 1: simple quadratic with zero at (1,1,...)")
     x, fx, conv_flag, nfe, nres = minimize(test_fun_1, [10.5,9.67,8.95,9.45,7.54,10])
-    print "x=", x
-    print "fx=", fx
-    print "convergence-flag=", conv_flag
-    print "number-of-fn-evaluations=", nfe
-    print "number-of-restarts=", nres
+    print("x=", x)
+    print("fx=", fx)
+    print("convergence-flag=", conv_flag)
+    print("number-of-fn-evaluations=", nfe)
+    print("number-of-restarts=", nres)
     
 
 """
